@@ -1,0 +1,32 @@
+{
+    "sliders": {
+        "column": {
+            "id": true,
+            "name": true,
+            "is_active": true,
+            "image_path": true,
+            "created_at": true,
+            "updated_at": true,
+            "slider_id": true,
+            "swiper_id": true
+        },
+        "constraint": {
+            "PRIMARY": true,
+            "SLIDERS_SLIDER_ID_SLIDERS_SETTINGS_ID": true,
+            "SLIDERS_SWIPER_ID_SLIDERS_SETTINGS_ID": true
+        }
+    },
+    "sliders_settings": {
+        "column": {
+            "id": true,
+            "name": true,
+            "is_repeated": true,
+            "delay": true,
+            "created_at": true,
+            "updated_at": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    }
+}

@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="sliders" resource="default" engine="innodb" comment="Slider Images Table">
+        <column xsi:type="int" name="id" unsigned="true" nullable="false" identity="true"
+                comment="Slide ID"/>
+        <column xsi:type="varchar" name="name" nullable="false" length="255" comment="Slide name"/>
+        <column xsi:type="smallint" name="is_active" nullable="false" default="1" comment="Slide activity"/>
+        <column xsi:type="text" name="image_path" nullable="false" comment="Slide image path"/>
+        <column xsi:type="int" name="swiper_id" unsigned="true" nullable="true" comment="Swiper ID"/>
+        <column xsi:type="timestamp" name="created_at" on_update="false" nullable="false" default="CURRENT_TIMESTAMP"
+                comment="Creation Time"/>
+        <column xsi:type="timestamp" name="updated_at" on_update="true" nullable="false" default="CURRENT_TIMESTAMP"
+                comment="Update Time"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="id"/>
+        </constraint>
+        <constraint xsi:type="foreign" referenceId="SLIDER_SLIDE_ID_SLIDERS_SETTINGS_ID" table="sliders"
+                    column="swiper_id" referenceTable="sliders_settings" referenceColumn="id"/>
+    </table>
+
+    <table name="sliders_settings" resource="default" engine="innodb" comment="Sliders Table">
+        <column xsi:type="int" name="id" unsigned="true" nullable="false" identity="true"
+                comment="Slider ID"/>
+        <column xsi:type="varchar" name="name" nullable="false" length="255" comment="Slider name"/>
+        <column xsi:type="smallint" name="is_repeated" nullable="false" default="1" comment="Sliders repeat"/>
+        <column xsi:type="text" name="delay" nullable="false" comment="Slider image delay"/>
+        <column xsi:type="timestamp" name="created_at" on_update="false" nullable="false" default="CURRENT_TIMESTAMP"
+                comment="Creation Time"/>
+        <column xsi:type="timestamp" name="updated_at" on_update="true" nullable="false" default="CURRENT_TIMESTAMP"
+                comment="Update Time"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="id"/>
+        </constraint>
+    </table>
+</schema>

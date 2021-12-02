@@ -1,0 +1,61 @@
+<?xml version="1.0" ?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="../../../../../lib/internal/Magento/Framework/ObjectManager/etc/config.xsd">
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="slider_sliders_list_data_source" xsi:type="string">slideCollection</item>
+            </argument>
+        </arguments>
+    </type>
+    <virtualType name="slideCollection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">sliders</argument>
+            <argument name="resourceModel" xsi:type="string">Piotrek\Slider\Model\ResourceModel\Slide</argument>
+        </arguments>
+    </virtualType>
+
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="slider_sliders_settings_list_data_source" xsi:type="string">swipersCollection</item>
+            </argument>
+        </arguments>
+    </type>
+    <virtualType name="swipersCollection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">sliders_settings</argument>
+            <argument name="resourceModel" xsi:type="string">Piotrek\Slider\Model\ResourceModel\Swiper</argument>
+        </arguments>
+    </virtualType>
+
+    <virtualType name="Piotrek\Slider\ReferenceImageUpload" type="Piotrek\Slider\Model\ImageUploader">
+        <arguments>
+            <argument name="baseTmpPath" xsi:type="string">tmp/slider/images</argument>
+            <argument name="basePath" xsi:type="string">slider/images</argument>
+            <argument name="allowedExtensions" xsi:type="array">
+                <item name="jpg" xsi:type="string">jpg</item>
+                <item name="jpeg" xsi:type="string">jpeg</item>
+                <item name="gif" xsi:type="string">gif</item>
+                <item name="png" xsi:type="string">png</item>
+            </argument>
+            <argument name="allowedMimeTypes" xsi:type="array">
+                <item name="jpg" xsi:type="string">image/jpg</item>
+                <item name="jpeg" xsi:type="string">image/jpeg</item>
+                <item name="gif" xsi:type="string">image/gif</item>
+                <item name="png" xsi:type="string">image/png</item>
+            </argument>
+        </arguments>
+    </virtualType>
+    <type name="Piotrek\Slider\Controller\Adminhtml\Index\Upload">
+        <arguments>
+            <argument name="imageUploader" xsi:type="object">Piotrek\Slider\ReferenceImageUpload</argument>
+        </arguments>
+    </type>
+    <type name="Piotrek\Slider\Controller\Adminhtml\Index\Save">
+        <arguments>
+            <argument name="imageUploader" xsi:type="object">Piotrek\Slider\ReferenceImageUpload</argument>
+        </arguments>
+    </type>
+</config>

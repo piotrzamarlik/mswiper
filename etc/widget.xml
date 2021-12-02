@@ -1,0 +1,13 @@
+<?xml version="1.0" ?>
+<widgets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:helloworld:Magento_Widget:etc/widget.xsd">
+    <widget class="Piotrek\Slider\Block\Widget\Swiper" id="piotrek_swiper">
+        <label>Swipers</label>
+        <description>Choose Swiper to display</description>
+        <parameters>
+            <parameter name="swiper" xsi:type="select" visible="true" source_model="Piotrek\Slider\Model\Swiper\Source\Options" sort_order="20" >
+                <label>Select</label>
+                <description>Select</description>
+            </parameter>
+        </parameters>
+    </widget>
+</widgets>

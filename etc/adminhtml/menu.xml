@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Piotrek_Slider::home" title="Sliders" module="Piotrek_Slider" sortOrder="41"
+             resource="Piotrek_Slider::home"/>
+        <add id="Piotrek_Slider::sliders" title="Management" module="Piotrek_Slider" sortOrder="10"
+             action="slider/index/index" resource="Piotrek_Slider::sliders" parent="Piotrek_Slider::home"/>
+        <add id="Piotrek_Slider::swipers_list" title="Swipers" module="Piotrek_Slider" sortOrder="20"
+             action="slider/swipers/index" resource="Piotrek_Slider::swipers_list" parent="Piotrek_Slider::home"/>
+    </menu>
+</config>

@@ -1,0 +1,16 @@
+{
+    "name": "piotrzamarlik/mslider",
+    "description": "Piotrek Slider Magento2 Simple extension",
+    "keywords": ["magento2", "piotrzamarlik", "m2sample"],
+    "type": "magento2-module",
+    "license": "OSL-3.0",
+    "require": {
+        "php": "~5.5.0|~5.6.0|~7.0.0"
+    },
+    "autoload": {
+        "files": [ "registration.php" ],
+        "psr-4": {
+            "Piotrek\\Slider\\": ""
+        }
+    }
+}
